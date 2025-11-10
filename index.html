@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPS MY Rastreadores - Segurança Veicular Acessível</title>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=IBM+Plex+Sans:wght@400&display=swap" rel="stylesheet" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header class="bg-[#216D33] text-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="image/logo-GPS.jpg" alt="Logo GPS MY" class="h-14 md:h-16 w-auto object-contain" loading="eager" />
+      </div>
+
+      <!-- Desktop menu -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#inicio" class="text-white font-semibold hover:text-[#6FC64B] transition">Início</a>
+        <a href="#sobre" class="text-white font-semibold hover:text-[#6FC64B] transition">Sobre Nós</a>
+        <a href="#produtos" class="text-white font-semibold hover:text-[#6FC64B] transition">Produtos</a>
+        <a href="#vantagens" class="text-white font-semibold hover:text-[#6FC64B] transition">Vantagens</a>
+        <a href="#depoimentos" class="text-white font-semibold hover:text-[#6FC64B] transition">Depoimentos</a>
+        <a href="#faq" class="text-white font-semibold hover:text-[#6FC64B] transition">FAQ</a>
+      </div>
+
+      <a href="#produtos" class="hidden md:block bg-[#6FC64B] text-[#216D33] font-bold px-6 py-2 rounded-full hover:bg-[#5ab03d] transition duration-300 shadow-lg" aria-label="Adquira o seu rastreador">
+        Adquira o Seu
+      </a>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-white" aria-label="Abrir menu">
+        <i data-feather="menu" class="w-6 h-6"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden bg-white text-gray-800 shadow-xl hidden" aria-hidden="true">
+      <a href="#inicio" class="block px-8 py-3 hover:bg-gray-100">Início</a>
+      <a href="#sobre" class="block px-8 py-3 hover:bg-gray-100">Sobre Nós</a>
+      <a href="#produtos" class="block px-8 py-3 hover:bg-gray-100">Produtos</a>
+      <a href="#vantagens" class="block px-8 py-3 hover:bg-gray-100">Vantagens</a>
+      <a href="#depoimentos" class="block px-8 py-3 hover:bg-gray-100">Depoimentos</a>
+      <a href="#faq" class="block px-8 py-3 hover:bg-gray-100">FAQ</a>
+      <div class="px-8 py-4">
+        <a href="#produtos" class="block w-full text-center bg-[#6FC64B] text-[#216D33] font-bold px-6 py-3 rounded-full hover:bg-[#5ab03d] transition duration-300 shadow-lg">
+          Adquira o Seu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- WhatsApp floating -->
+    <a href="https://wa.me/5598999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20GPS%20MY" target="_blank"
+       class="whatsapp-float bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl flex items-center justify-center" aria-label="Fale conosco pelo WhatsApp">
+      <!-- inline svg (same as original) -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+      </svg>
+    </a>
+
+    <!-- HERO -->
+    <section id="inicio" class="bg-white pt-16 pb-24 md:pt-24 md:pb-32 relative overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="image/fundo-home.png" alt="Background" class="w-full h-full object-cover" style="transform: scale(1.2); transform-origin: center;" loading="lazy" />
+      </div>
+
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="text-center md:text-left">
+          <span class="text-[#6FC64B] font-bold tracking-wider uppercase">Segurança Acessível</span>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#216D33] mt-3 mb-6 leading-tight">Proteja seu veículo. Instale você mesmo.</h2>
+          <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">A tranquilidade de saber onde seu veículo está, 24h por dia, na palma da sua mão. Sem mensalidade, sem complicação.</p>
+          <a href="#produtos" class="inline-block bg-[#6FC64B] text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-[#5ab03d] transition duration-300 transform hover:scale-105 shadow-xl">Adquira o Seu Rastreador</a>
+        </div>
+
+        <div class="relative scroll-animate">
+          <img src="image/background-home.png" alt="Aplicativo GPS MY monitorando veículo" class="rounded-lg shadow-2xl mx-auto" loading="lazy" />
+          <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-lg shadow-lg flex items-center scroll-animate" style="transition-delay:200ms;">
+            <i data-feather="map-pin" class="text-[#6FC64B] w-8 h-8"></i>
+            <span class="ml-3 font-bold text-[#216D33]">Localização em Tempo Real</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="relative scroll-animate">
+            <div class="rounded-xl shadow-2xl overflow-hidden">
+              <img src="image/nossa-historia.png" alt="Nossa Missão - GPS MY" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="absolute -bottom-6 -right-6 bg-[#6FC64B] p-4 rounded-lg shadow-lg flex items-center scroll-animate" style="transition-delay:200ms;">
+              <i data-feather="heart" class="text-white w-8 h-8"></i>
+              <span class="ml-3 font-bold text-white">Nossa Missão</span>
+            </div>
+          </div>
+          <div class="text-center md:text-left scroll-animate" style="transition-delay:100ms;">
+            <span class="text-[#6FC64B] font-bold tracking-wider uppercase">Nossa História</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-[#216D33] mt-3 mb-6 leading-tight">Segurança que todos podem pagar.</h2>
+            <p class="text-lg text-gray-600 mb-6">A GPS My nasceu de uma necessidade real: levar tranquilidade para quem mais precisa. Vimos que a segurança veicular de qualidade era muitas vezes um luxo, inacessível para moradores de bairros com altos índices de criminalidade.</p>
+            <p class="text-lg text-gray-600">Nosso objetivo é quebrar essa barreira. Criamos uma marca de rastreamento acessível, fácil de instalar e sem mensalidades, para que o público que não pode pagar por um sistema tradicional também possa proteger seu patrimônio com eficiência.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="py-20 bg-[#216D33] text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-[#6FC64B] rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#6FC64B] rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <span class="text-[#6FC64B] font-bold tracking-wider uppercase text-sm">Nossas Soluções</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-3">Nossos Dispositivos</h2>
+          <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">Escolha a solução ideal para você. Auto-instalação, sem mensalidade e pronto para usar.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col scroll-animate border border-gray-200">
+            <div class="relative">
+              <img src="image/tag-rastreamento.png" alt="Tag de Rastreamento GPS MY" class="w-full h-64 object-cover" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-[#6FC64B] text-white text-sm font-bold px-4 py-1 rounded-full">MAIS VENDIDO</span>
+            </div>
+            <div class="p-8 flex-grow">
+              <h3 class="text-2xl font-extrabold text-[#216D33]">Tag de Rastreamento</h3>
+              <p class="text-gray-600 mt-2 mb-4">Ideal para motos, carros, bicicletas e até mesmo em mochilas. Bateria de longa duração.</p>
+              <div class="text-4xl font-extrabold text-[#216D33] mb-6">R$ 99,00 <span class="text-lg font-normal text-gray-500">(Pagamento único)</span></div>
+            </div>
+            <div class="p-8 pt-0">
+              <a href="#" class="block w-full text-center bg-[#6FC64B] text-white font-bold py-3 px-6 rounded-full hover:bg-[#5ab03d] transition duration-300 shadow-lg">Comprar Agora</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col scroll-animate border border-gray-200" style="transition-delay:200ms;">
+            <div class="relative">
+              <img src="image/rastreador-obdii.png" alt="Rastreador Veicular OBD II GPS MY" class="w-full h-64 object-cover" loading="lazy" />
+              <span class="absolute top-4 left-4 bg-[#216D33] text-white text-sm font-bold px-4 py-1 rounded-full">INSTALAÇÃO FÁCIL</span>
+            </div>
+            <div class="p-8 flex-grow">
+              <h3 class="text-2xl font-extrabold text-[#216D33]">Rastreador Veicular OBD II</h3>
+              <p class="text-gray-600 mt-2 mb-4">Conecte diretamente na porta OBD II do seu carro. Energia direto do veículo, sem carregar.</p>
+              <div class="text-4xl font-extrabold text-[#216D33] mb-6">R$ 299,00 <span class="text-lg font-normal text-gray-500">(Pagamento único)</span></div>
+            </div>
+            <div class="p-8 pt-0">
+              <a href="#" class="block w-full text-center bg-[#6FC64B] text-white font-bold py-3 px-6 rounded-full hover:bg-[#5ab03d] transition duration-300 shadow-lg">Comprar Agora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VANTAGENS -->
+    <section id="vantagens" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#216D33]">Por que escolher a GPS MY?</h2>
+          <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Simples, acessível e sem surpresas. Veja por que somos a escolha certa para sua segurança.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="text-center p-8 scroll-animate">
+            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-[#6FC64B] rounded-full text-white shadow-lg">
+              <i data-feather="dollar-sign" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#216D33] mt-6 mb-3">Sem Mensalidade</h3>
+            <p class="text-gray-600">Você paga apenas uma vez pelo dispositivo. Sem taxas escondidas, sem mensalidades. Economia de verdade.</p>
+          </div>
+
+          <div class="text-center p-8 scroll-animate" style="transition-delay:200ms;">
+            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-[#6FC64B] rounded-full text-white shadow-lg">
+              <i data-feather="settings" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#216D33] mt-6 mb-3">Instale Você Mesmo</h3>
+            <p class="text-gray-600">Nossos dispositivos são 'Plug & Play'. Não precisa de técnico nem de oficina. Você instala em minutos.</p>
+          </div>
+
+          <div class="text-center p-8 scroll-animate" style="transition-delay:400ms;">
+            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-[#6FC64B] rounded-full text-white shadow-lg">
+              <i data-feather="smartphone" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#216D33] mt-6 mb-3">Controle Total no App</h3>
+            <p class="text-gray-600">Monitore em tempo real, crie cercas virtuais, receba alertas e veja o histórico de rotas direto do celular.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO INSTALAR -->
+    <section id="como-instalar" class="py-20 bg-[#216D33] text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold">Instale em minutos. Sem complicação.</h2>
+          <p class="text-lg opacity-90 mt-4">Com a tecnologia GPS My, você mesmo faz a instalação — basta plugar o dispositivo e começar a monitorar seu veículo em tempo real.</p>
+          <p class="text-base opacity-80 mt-6 font-medium">Compatível com todos os veículos com porta OBD II (modelos a partir de 2008).</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
+          <div class="text-center p-8 bg-white/10 rounded-xl shadow-lg scroll-animate border border-white/20">
+            <div class="bg-[#6FC64B] text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg">
+              <i data-feather="cpu" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold mt-6 mb-2">1. Conecte</h3>
+            <p class="opacity-80">Plugue o dispositivo GPS My na entrada OBD II do seu veículo (geralmente abaixo do volante).</p>
+          </div>
+
+          <div class="text-center p-8 bg-white/10 rounded-xl shadow-lg scroll-animate border border-white/20" style="transition-delay:200ms;">
+            <div class="bg-[#6FC64B] text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg">
+              <i data-feather="smartphone" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold mt-6 mb-2">2. Baixe o App</h3>
+            <p class="opacity-80">Faça o download do aplicativo GPS My na Google Play ou App Store e cadastre seu dispositivo.</p>
+          </div>
+
+          <div class="text-center p-8 bg-white/10 rounded-xl shadow-lg scroll-animate border border-white/20" style="transition-delay:400ms;">
+            <div class="bg-[#6FC64B] text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg">
+              <i data-feather="map" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold mt-6 mb-2">3. Monitore</h3>
+            <p class="opacity-80">Acompanhe a localização, alertas e trajetos do seu veículo em tempo real, direto do celular.</p>
+          </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-20 scroll-animate" style="transition-delay:600ms;">
+          <div class="relative bg-black rounded-xl shadow-2xl overflow-hidden aspect-[16/9]">
+            <iframe class="w-full h-full absolute top-0 left-0" src="https://www.youtube.com/embed/6PBU0W3gnaA?si=q7xNEPiScNbZ-BGz&amp;start=418" title="Vídeo de instalação do GPS MY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="text-center mt-16">
+          <a href="#produtos" class="inline-block bg-[#6FC64B] text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-[#5ab03d] transition-colors duration-300 transform hover:scale-105 shadow-xl">Adquira o Seu Rastreador</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#216D33]">Quem usa, confia</h2>
+          <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Veja o que nossos clientes dizem sobre a tranquilidade de ter um GPS MY.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-lg scroll-animate">
+            <div class="flex items-center mb-4">
+              <img src="https://placehold.co/50x50/cccccc/333333?text=JS" alt="João S." class="w-12 h-12 rounded-full" loading="lazy" />
+              <div class="ml-4">
+                <h4 class="font-extrabold text-[#216D33]">João S.</h4>
+                <p class="text-sm text-gray-500">São Luís, MA</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">"Finalmente um rastreador que eu mesmo consigo instalar e que não tem mensalidade. Moro em bairro afastado e agora durmo tranquilo. A paz de espírito não tem preço."</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-lg scroll-animate" style="transition-delay:200ms;">
+            <div class="flex items-center mb-4">
+              <img src="https://placehold.co/50x50/cccccc/333333?text=MA" alt="Maria A." class="w-12 h-12 rounded-full" loading="lazy" />
+              <div class="ml-4">
+                <h4 class="font-extrabold text-[#216D33]">Maria A.</h4>
+                <p class="text-sm text-gray-500">Teresina, PI</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">"Comprei o OBDII pro meu carro de trabalho. A instalação foi ridícula de fácil, literalmente só pluguei. O app é simples e mostra tudo certinho. Recomendo demais!"</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-lg scroll-animate" style="transition-delay:400ms;">
+            <div class="flex items-center mb-4">
+              <img src="https://placehold.co/50x50/cccccc/333333?text=RC" alt="Ricardo C." class="w-12 h-12 rounded-full" loading="lazy" />
+              <div class="ml-4">
+                <h4 class="font-extrabold text-[#216D33]">Ricardo C.</h4>
+                <p class="text-sm text-gray-500">Fortaleza, CE</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">"Uso a Tag na minha moto. É pequena, a bateria dura bem e eu consigo ver onde ela está pelo celular. Pelo preço, é o melhor investimento que fiz pra minha segurança."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ + FORMULÁRIO (juntos) -->
+    <section id="faq-form" class="py-20 bg-white">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+        <!-- FAQ (lado esquerdo) -->
+        <div>
+          <div class="text-left mb-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-[#216D33]">Perguntas Frequentes</h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl">Tire suas dúvidas sobre o GPS MY e nossos produtos.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="faq-item bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden scroll-animate">
+              <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition duration-200" data-faq="1">
+                <span class="text-lg font-extrabold text-[#216D33] pr-4">Realmente não tem mensalidade? Como funciona?</span>
+                <i data-feather="chevron-down" class="faq-icon text-[#6FC64B] w-6 h-6 flex-shrink-0"></i>
+              </button>
+              <div class="faq-answer p-6 pt-0 hidden" data-answer="1">
+                <p>Sim! O GPS MY funciona sem mensalidade. Você paga apenas uma vez pelo dispositivo e pode usar para sempre. Nosso sistema utiliza tecnologia de rastreamento que não requer planos mensais.</p>
+              </div>
+            </div>
+
+            <div class="faq-item bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden scroll-animate" style="transition-delay:200ms;">
+              <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition duration-200" data-faq="2">
+                <span class="text-lg font-extrabold text-[#216D33] pr-4">É realmente fácil de instalar? Preciso de um técnico?</span>
+                <i data-feather="chevron-down" class="faq-icon text-[#6FC64B] w-6 h-6 flex-shrink-0"></i>
+              </button>
+              <div class="faq-answer p-6 pt-0 hidden" data-answer="2">
+                <p>Muito fácil! O rastreador OBDII é totalmente 'Plug & Play' - basta conectá-lo na porta OBDII do seu veículo. A Tag é ainda mais simples: fixe e pronto.</p>
+              </div>
+            </div>
+
+            <div class="faq-item bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden scroll-animate" style="transition-delay:400ms;">
+              <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition duration-200" data-faq="3">
+                <span class="text-lg font-extrabold text-[#216D33] pr-4">O aplicativo funciona em qualquer celular?</span>
+                <i data-feather="chevron-down" class="faq-icon text-[#6FC64B] w-6 h-6 flex-shrink-0"></i>
+              </button>
+              <div class="faq-answer p-6 pt-0 hidden" data-answer="3">
+                <p>O app GPS MY está disponível para Android e iOS. Após instalar o dispositivo, basta baixar o app, criar sua conta e vincular o rastreador.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO (lado direito) -->
+        <div class="bg-[#216D33] p-8 rounded-xl shadow-lg text-white scroll-animate" style="transition-delay:200ms;">
+          <h3 class="text-2xl font-extrabold mb-4">Ainda ficou com dúvidas? Fale conosco</h3>
+          <p class="mb-6 text-gray-100">Preencha o formulário e nossa equipe entrará em contato.</p>
+
+          <form id="form-contato" class="grid grid-cols-1 gap-4">
+            <div>
+              <label for="nome" class="block text-sm font-semibold mb-2">Nome</label>
+              <input id="nome" name="nome" type="text" required class="w-full px-4 py-2 rounded-lg text-gray-800" />
+            </div>
+
+            <div>
+              <label for="telefone" class="block text-sm font-semibold mb-2">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" required class="w-full px-4 py-2 rounded-lg text-gray-800" />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-2">E-mail</label>
+              <input id="email" name="email" type="email" required class="w-full px-4 py-2 rounded-lg text-gray-800" />
+            </div>
+
+            <div>
+              <label for="mensagem" class="block text-sm font-semibold mb-2">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" required class="w-full px-4 py-2 rounded-lg text-gray-800"></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="w-full bg-[#6FC64B] text-[#216D33] font-bold px-4 py-3 rounded-full hover:bg-[#5ab03d] transition">Enviar Mensagem</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6 text-center">
+        <div class="bg-[#6FC64B] text-white rounded-xl shadow-2xl p-10 md:p-16 max-w-4xl mx-auto scroll-animate">
+          <span class="font-bold uppercase tracking-wider">Oferta por Tempo Limitado</span>
+          <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-6">Não espere o pior acontecer.</h2>
+          <p class="text-lg md:text-xl opacity-90 mb-8">Proteja seu patrimônio hoje mesmo com a GPS MY. Estoque limitado com preço especial de lançamento!</p>
+          <a href="#produtos" class="inline-block bg-white text-[#216D33] font-extrabold text-lg px-10 py-4 rounded-full hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg">Fale com um consultor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#216D33] text-gray-300">
+    <div class="container mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-1">
+          <h3 class="text-4xl font-extrabold text-white mb-4">GPS<span class="text-[#6FC64B]">MY</span></h3>
+          <p class="text-lg font-bold text-white mb-4 leading-tight">Segurança veicular acessível na palma da sua mão!</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Proteja seu patrimônio com tecnologia de rastreamento sem mensalidade e fácil instalação.</p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-extrabold text-lg mb-6 uppercase tracking-wider">Menu</h4>
+          <ul class="space-y-3">
+            <li><a href="#inicio" class="text-gray-300 hover:text-[#6FC64B] flex items-center"><i data-feather="chevron-right" class="w-4 h-4 mr-2"></i>Início</a></li>
+            <li><a href="#sobre" class="text-gray-300 hover:text-[#6FC64B] flex items-center"><i data-feather="chevron-right" class="w-4 h-4 mr-2"></i>Sobre Nós</a></li>
+            <li><a href="#produtos" class="text-gray-300 hover:text-[#6FC64B] flex items-center"><i data-feather="chevron-right" class="w-4 h-4 mr-2"></i>Produtos</a></li>
+            <li><a href="#vantagens" class="text-gray-300 hover:text-[#6FC64B] flex items-center"><i data-feather="chevron-right" class="w-4 h-4 mr-2"></i>Vantagens</a></li>
+            <li><a href="#faq" class="text-gray-300 hover:text-[#6FC64B] flex items-center"><i data-feather="chevron-right" class="w-4 h-4 mr-2"></i>FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-extrabold text-lg mb-6 uppercase tracking-wider">Informações Úteis</h4>
+          <div class="mb-6">
+            <div class="flex items-start mb-3">
+              <i data-feather="mail" class="w-5 h-5 text-[#6FC64B] mr-3 mt-1"></i>
+              <a href="mailto:gpsmy@email.com" class="text-gray-300 hover:text-[#6FC64B]">gpsmy@email.com</a>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="text-white font-bold mb-3">Siga-nos:</p>
+            <div class="flex space-x-4">
+              <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-[#6FC64B] transition" aria-label="Instagram"><i data-feather="instagram" class="w-5 h-5"></i></a>
+              <a href="#" class="bg-white/10 p-2 rounded-full hover:bg-[#6FC64B] transition" aria-label="Facebook"><i data-feather="facebook" class="w-5 h-5"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-extrabold text-lg mb-6 uppercase tracking-wider">Central de Atendimento</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i data-feather="phone" class="w-5 h-5 text-[#6FC64B] mr-3 mt-1"></i>
+              <div><a href="tel:+5598999999999" class="text-gray-300 hover:text-[#6FC64B] block">(98) 9 9999-9999</a><span class="text-gray-500 text-sm">Financeiro</span></div>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="phone" class="w-5 h-5 text-[#6FC64B] mr-3 mt-1"></i>
+              <div><a href="tel:+5598999999999" class="text-gray-300 hover:text-[#6FC64B] block">(98) 9 9999-9999</a><span class="text-gray-500 text-sm">Suporte</span></div>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="phone" class="w-5 h-5 text-[#6FC64B] mr-3 mt-1"></i>
+              <div><a href="tel:+5598999999999" class="text-gray-300 hover:text-[#6FC64B] block">(98) 9 9999-9999</a><span class="text-gray-500 text-sm">Comercial</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700">
+      <div class="container mx-auto px-6 py-6">
+        <p class="text-center text-gray-400 text-sm">© 2025 <span class="text-white font-bold">GPS MY Rastreadores</span>. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-[#216D33] text-white p-3 rounded-full shadow-lg hover:bg-[#5ab03d] transition" aria-label="Voltar ao topo">
+    <i data-feather="arrow-up"></i>
+  </button>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
