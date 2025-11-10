@@ -63,7 +63,7 @@ Copiar código
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seuusuario/gps-my-landing-page.git
+   git clone https://github.com/pauloroberto-s/gps-my-landing-page.git
 Acesse o diretório:
 
 bash
